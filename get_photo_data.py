@@ -1,4 +1,4 @@
-import os
+import os, pprint
 from PIL import Image, ExifTags
 
 # r = raw string
@@ -14,6 +14,7 @@ assert os.path.isdir(folder_path), f"Path must be a directory. {folder_path}"
 files = os.listdir(folder_path)
 allowed_extensions = [".jpg", ".jpeg"]
 
+photo_data = {}
 for i in files:
     full_path = os.path.join(folder_path, i)
     
@@ -34,4 +35,9 @@ for i in files:
         continue
 
     model = exif_data.get(0x0110)
-    print(i, model)
+    date = exif_data.get(0x9003)
+    iso = exif_data.get(0x8827)
+
+    #           root key                            data
+    photo_data[full_path] = {"model":model, "date": date, "iso": iso, "size":size}
+
