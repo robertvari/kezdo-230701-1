@@ -1,4 +1,5 @@
 import os
+from PIL import Image, ExifTags
 
 # r = raw string
 folder_path = r"D:\Work\_PythonSuli\kezdo-230701\photos"
@@ -22,4 +23,15 @@ for i in files:
         continue
 
     # open image
+    img = Image.open(full_path)
     
+    # get the size of the image
+    size = img.size
+
+    # get exif data from image
+    exif_data = img._getexif()
+    if not exif_data:
+        continue
+
+    model = exif_data.get(0x0110)
+    print(i, model)
