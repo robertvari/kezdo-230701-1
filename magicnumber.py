@@ -5,7 +5,6 @@ min = 1
 max = 10
 max_tries = 3
 magic_number = random.randint(min, max)
-magic_number = 5  # TODO REMOVE THIS
 
 # Clear terminal
 if platform.system() == "Windows":
