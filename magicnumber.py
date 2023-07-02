@@ -18,6 +18,11 @@ print(f"I have a number between {min} and {max}. Can you guess it?")
 
 # Game Loop
 while True:
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
+
     max_tries = 3
     magic_number = random.randint(min, max)
     print(f"You can try {max_tries} times.")
