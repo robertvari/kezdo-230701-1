@@ -20,6 +20,18 @@ print(f"You can try {max_tries} times.")
 
 player_guess = input("What is your guess?")
 
+
+while str(magic_number) != player_guess:
+    max_tries -= 1
+    if max_tries == 0:
+        break
+
+    print(f"Wrong guess. You can try {max_tries} more times.")
+    player_guess = input("What is your guess?")
+
+
+
+# Check final result
 if str(magic_number) == player_guess:
     print("You win!")
 else:
