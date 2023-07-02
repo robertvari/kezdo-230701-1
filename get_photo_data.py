@@ -1,4 +1,4 @@
-import os, pprint
+import os, json
 from PIL import Image, ExifTags
 
 # r = raw string
@@ -41,3 +41,6 @@ for i in files:
     #           root key                            data
     photo_data[full_path] = {"model":model, "date": date, "iso": iso, "size":size}
 
+# write out data
+with open("photo_data.json", "w") as f:
+    json.dump(photo_data, f)
