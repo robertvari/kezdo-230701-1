@@ -12,4 +12,6 @@ assert os.path.isdir(folder_path), f"Path must be a directory. {folder_path}"
 # get all files and folders from folder_path
 files = os.listdir(folder_path)
 
-print(files)
+for i in files:
+    full_path = os.path.join(folder_path, i)
+    print(full_path)
