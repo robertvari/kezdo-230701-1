@@ -1,4 +1,4 @@
-my_name = "Robert"
+my_name = "Csaba"
 
-with open("test_file.txt", "w") as my_file:
-    my_file.write(my_name)
+with open("test_file.txt", "w") as f:
+    f.write(my_name)
