@@ -1,4 +1,4 @@
-import platform, os, random
+import platform, os, random, time
 
 # Create game variables
 min = 1
@@ -14,7 +14,7 @@ else:
 print("-"*50, "MAGIC NUMBER GAME", "-"*50)
 print(f"I have a number between {min} and {max}. Can you guess it?")
 
-
+time.sleep(3)
 
 # Game Loop
 while True:
